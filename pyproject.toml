@@ -1,0 +1,13 @@
+[project]
+name = "worship-tower-defense-simulator"
+version = "0.1.0"
+description = "Headless Idleon Worship combat, layouts and build-order simulation."
+requires-python = ">=3.12"
+dependencies = []
+
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["src"]
