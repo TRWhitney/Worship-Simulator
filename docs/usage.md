@@ -80,13 +80,16 @@ running client. Live account-cache and asset-memory checks belong to the overlay
 
 ## Publish and consume
 
-This checkout is an independent Git repository. Create the empty GitHub repository
-`TRWhitney/Worship-Tower-Defense-Simulator`, then push its `main` branch. Its origin
-URL is configured for that destination; extraction does not create or push it.
+After creating the GitHub repository, publish this checkout with:
 
-Idleon-Overlays consumes a pinned commit at `vendor/worship-simulator`, with a
-relative sibling URL in `.gitmodules`. Local Git configuration resolves the
-submodule from this sibling checkout until publication. Push the simulator commit
-before publishing the overlay commit that pins it. Fresh overlay checkouts use
-`git submodule update --init --recursive`. GNOME and Windows bundles contain only
-the runtime package, so installed overlays need no simulator repository.
+```sh
+git remote add origin https://github.com/TRWhitney/Worship-Simulator.git
+git branch -M main
+git push -u origin main
+```
+
+Idleon-Overlays consumes a pinned commit at `vendor/worship-simulator`, using
+`https://github.com/TRWhitney/Worship-Simulator.git` in `.gitmodules`. Push the
+simulator commit before publishing the overlay commit that pins it. Fresh overlay
+checkouts use `git submodule update --init --recursive`. GNOME and Windows bundles
+contain only the runtime package, so installed overlays need no simulator repo.
